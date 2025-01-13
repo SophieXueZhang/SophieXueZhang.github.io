@@ -1,129 +1,109 @@
-# Sophie Zhang's Portfolio Website
+# Portfolio Website Update Guide
 
-Clone from [Naledi Hollbruegge's portfolio website](https://naledi.co.uk/)
+## Table of Contents
+- [Basic Setup](#basic-setup)
+- [File Structure](#file-structure)
+- [How to Update Content](#how-to-update-content)
+- [How to Push Changes](#how-to-push-changes)
 
-A professional portfolio website showcasing my work as a Consulting Analyst. The website is built with modern web technologies and hosted on GitHub Pages.
+## Basic Setup
 
-## Site Analysis & Features
-
-### Navigation Structure
-- Clean, minimal top navigation
-- Two main links: "Home" and "Blog"
-- Fixed position for easy access
-
-### Hero Section
-- Name as main heading
-- Professional title as subheading
-- Clear value proposition
-- Prominent "GET IN TOUCH" CTA button
-
-### Core Services (Three-Column Layout)
-- **Collect**: Focus on research background
-- **Process**: Emphasis on Alteryx certification
-- **Visualize**: Highlighting Tableau expertise
-
-Each section uses:
-- Bold headings
-- Strategic bold text highlighting
-- Clear service descriptions
-
-### About Section
-- Personal introduction
-- Focus on data analysis journey
-- Clear value proposition
-- Availability statement
-
-### Portfolio Grid
-- Clean grid layout
-- Mix of client and personal projects
-- Each project includes:
-  - Project title
-  - Brief description
-  - Client name (when applicable)
-  - Visual preview
-
-### Blog Section
-- Three featured articles
-- Clear titles
-- Brief descriptions
-- "Read More" CTAs
-
-### Coming Soon/Newsletter
-- Course promotion
-- Email signup form
-- Privacy assurance
-
-### Testimonial Section
-- Client quote
-- Client name and position
-- Adds credibility
-
-### Contact Form
-- Simple, three-field design:
-  - Name
-  - Email
-  - Message
-- Clear CTA button
-
-### Visual Design Elements
-- Consistent color scheme
-- Professional typography
-- Ample white space
-- Subtle animations
-- Responsive layout
-
-### Footer
-- Social media links (LinkedIn)
-- Cookie consent management
-- Clean, minimal design
-
-## Technologies Used
-
-- HTML5
-- CSS3 (with CSS Grid and Flexbox)
-- JavaScript
-- Font Awesome for icons
-- Formspree for form handling
-- GitHub Pages for hosting
-
-## Main Sections
-
-1. **Header**: Professional introduction and call-to-action
-2. **Services**: Three main service areas
-   - Data Collection
-   - Data Processing
-   - Data Visualization
-3. **Portfolio**: Showcase of professional projects
-4. **Contact**: Contact form for potential clients
-
-## Project Structure
-
-```
-.
-├── index.html              # Main HTML file
-├── styles/
-│   └── main.css           # CSS styles
-├── js/
-│   └── main.js            # JavaScript functionality
-└── .github/
-    └── workflows/         # GitHub Actions workflows
+1. Clone the repository:
+```bash
+git clone https://github.com/SophieXueZhang/SophieXueZhang.github.io.git
+cd SophieXueZhang.github.io
 ```
 
-## Live Website
+2. Make sure you're on the `gh-pages` branch:
+```bash
+git checkout gh-pages
+```
 
-The website is live at: [https://sophiexuezhang.github.io](https://sophiexuezhang.github.io)
+## File Structure
 
-## Development
+- `index.html` - Main content of the website
+- `styles/main.css` - All styling and design
+- `js/main.js` - JavaScript functionality
+- `requirements.md` - Project overview and features
 
-To run this project locally:
-1. Clone the repository
-2. Open index.html in your browser
-3. For the contact form to work, replace the Formspree endpoint with your own
+## How to Update Content
 
-## Deployment
+### 1. Updating Text Content
 
-The website is automatically deployed to GitHub Pages using GitHub Actions workflow. Any push to the main branch triggers a new deployment.
+To update text content (like About section, Services, etc.):
+1. Open `index.html`
+2. Find the relevant section using the comments (e.g. `<!-- About Section -->`)
+3. Modify the text within the HTML tags
+4. Save the file
 
-## Contact
+Example sections in `index.html`:
+- Hero section: Look for `<header class="hero">`
+- About section: Look for `<section class="about">`
+- Services: Look for `<section class="services">`
+- Portfolio: Look for `<section class="portfolio">`
+- Blog: Look for `<section class="blog">`
 
-For any queries or suggestions, please use the contact form on the website.
+### 2. Updating Portfolio Projects
+
+To update portfolio projects:
+1. In `index.html`, find the `<section class="portfolio">` section
+2. Each project is within a `<div class="portfolio-item">` element
+3. Update:
+   - Image: Change the `src` attribute in `<img src="...">`
+   - Title: Modify text in `<h3>` tags
+   - Description: Update text in `<p>` tags
+
+### 3. Updating Contact Form
+
+The contact form uses Formspree. To update:
+1. Find the form section: `<section id="contact">`
+2. The form action contains your Formspree ID: `action="https://formspree.io/f/xzzzyzvl"`
+3. To change where emails are sent, update your Formspree settings at formspree.io
+
+### 4. Updating Styles
+
+To modify the design:
+1. Open `styles/main.css`
+2. Find the relevant section using comments
+3. Common properties to change:
+   - Colors: Look for `:root` variables at the top
+   - Spacing: Modify `padding` and `margin` values
+   - Font sizes: Change `font-size` properties
+
+## How to Push Changes
+
+After making updates:
+
+1. Stage your changes:
+```bash
+git add .
+```
+
+2. Commit your changes:
+```bash
+git commit -m "Description of your updates"
+```
+
+3. Push to GitHub:
+```bash
+git push origin gh-pages
+```
+
+4. Wait 2-3 minutes for GitHub Pages to rebuild
+5. Clear your browser cache or open in incognito mode
+6. Visit https://sophiexuezhang.github.io to see changes
+
+## Tips
+
+- Always backup your changes before making major updates
+- Test changes locally before pushing
+- Use browser developer tools (F12) to preview style changes
+- Keep image sizes reasonable for fast loading
+- Maintain consistent styling across sections
+
+## Need Help?
+
+If you need to make more complex changes or run into issues:
+1. Check the [GitHub Pages documentation](https://docs.github.com/en/pages)
+2. Review the [requirements.md](requirements.md) file for project structure
+3. Consider using GitHub's interface for small text changes    
